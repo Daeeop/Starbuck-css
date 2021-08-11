@@ -50,3 +50,11 @@ window.addEventListener('scroll' , _.throttle(() =>{
 // 옵션은 객체 데이터
 // 요소가 시각적으로만 사라진것이지 영역 자체가 사라지는게 아님 >> display : 'none' 도 명시 해주어야 한다.
 
+// fade-in 순차적으로 요소 나타내기
+const fadeIns = document.querySelectorAll('.visual .fade-in');
+fadeIns.forEach((fadeEl , index) => {
+  gsap.to(fadeEl , 1 , {
+    delay: (index+1) * .7, // 0.7 , 1.4 , 2.1 , 2.8 초 후에 순차적으로 요소가 나타난다.
+    opacity : 1  
+  });
+});

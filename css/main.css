@@ -22,6 +22,67 @@ a {
   position: relative;
 }
 
+.btn {
+  width: 130px;
+  padding: 10px;
+  border: 2px solid #333;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #333;
+  text-align: center;
+  font-weight: 700;
+  cursor: pointer;
+  box-sizing: border-box;
+  display: block;
+  transition: .4s;
+}
+
+.btn:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+.btn.btn--reservse {
+  background-color: #333;
+  color: #fff;
+
+}
+
+.btn.btn--reservse:hover {
+  background-color: transparent;
+  color: #333;
+}
+
+.btn.btn--brown {
+  color: #592B18;
+  border-color: #592B18;
+}
+
+.btn.btn--brown:hover {
+  color: #fff;
+  background-color: #592B18;
+}
+
+.btn.btn--gold {
+  color: #d9aa8a;
+  border-color: #d9aa8a;
+}
+
+.btn.btn--gold:hover {
+  color: #fff;
+  background-color: #d9aa8a;
+}
+
+.btn.btn--white {
+  color: #fff;
+  border-color: #fff;
+}
+
+.btn.btn--white:hover {
+  color: #333;
+  background-color: #fff;
+}
+
 
 
 /* HEADER CSS */
@@ -31,6 +92,7 @@ header {
   position: fixed;
   width: 100%;
   top: 0;
+  z-index: 999;
 }
 header > .inner {
   height: 120px;
@@ -226,4 +288,67 @@ header .badges .badge {
   box-shadow: 4px 4px 10px rgba(0,0,0,.15);
   cursor: pointer;
 }
+
+/* SECTION-VISUAL 영역 */
+.visual {
+  margin-top: 120px; 
+  background-image: url("../images/visual_bg.jpg");
+  background-position: center;
+
+}
+
+.visual .inner {
+  height: 646px;
+  
+}
+
+/* 구조적인 부모 요소는 inner 이다. */
+.visual .title {
+  position: absolute;
+  top: 88px;
+  left: -10px;
+}
+
+/* 구조적인 부모 요소는 title 이다. */
+.visual .title .btn {
+  position: absolute;
+  top: 259px;
+  left: 173px;
+}
+
+.visual .cup1.image {
+  position: absolute;
+  bottom: 0;
+  right: -47px;
+}
+
+.visual .cup1.text {
+  position: absolute;
+  top: 38px;
+  right: 171px;
+}
+
+.visual .cup2.image {
+  position: absolute;
+  bottom: 0;
+  right: 162px;
+}
+
+.visual .cup2.text {
+  right: 416px;
+  position: absolute;
+  top: 321px;
+}
+
+.visual .spoon {
+  position: absolute;
+  left: 275px;
+  bottom: 0;
+}
+
+.fade-in {
+  opacity: 0;
+}
+
+
 
