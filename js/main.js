@@ -58,3 +58,11 @@ fadeIns.forEach((fadeEl , index) => {
     opacity : 1  
   });
 });
+
+// 공지사항 SWIPER
+// new Swiper(선택자 , 옵션)
+new Swiper('.notice-line .swiper-container' , {
+  direction : 'vertical',
+  autoplay : true,
+  loop : true 
+});
