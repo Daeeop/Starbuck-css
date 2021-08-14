@@ -96,3 +96,26 @@ pormotionTollgeBtn.addEventListener('click' , () => {
   isHidePromotion ? promotionEl.classList.add('hide') : promotionEl.classList.remove('hide');
 });
 
+// 랜덤한 숫자를 반환 해주는 함수
+const random = (min , max) => {
+  return parseFloat((Math.random() * (max - min) + min).toFixed(2)) // 소수둘째 자리까지
+}
+
+// Floating Animation
+// gasp.to(선택자 , 지속시간 , 옵션(객체형태로))
+function floatingObject(selector , delay , size) {
+  gsap.to(selector, random(1.5 , 2.5), {
+    y: size, // y축으로 20 이동 하는 애니메이션 수행
+    repeat: -1, // 무한 반복
+    yoyo: true, // 한번 재생된 애니메이션을 다시 뒤로 재생
+    ease: Power1.easeInOut,
+    delay: random(0, delay)
+
+  });
+}
+
+floatingObject('.floating1', 1 ,15);
+floatingObject('.floating2', .5 ,15);
+floatingObject('.floating3', 1.5 ,25);
+
+
