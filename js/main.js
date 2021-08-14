@@ -118,4 +118,20 @@ floatingObject('.floating1', 1 ,15);
 floatingObject('.floating2', .5 ,15);
 floatingObject('.floating3', 1.5 ,25);
 
+// 스크롤 매직 라이브러리
+const spyEls = document.querySelectorAll('section.scroll-spy');
+// 요소가 여러개 이기 때문에 forEach 
+spyEls.forEach((spyEl) => {
+  new ScrollMagic
+    .Scene({
+      triggerElement : spyEl, // 보여짐에 여부를 감시할 대상 지정
+      tirggerHook : .8 // 뷰포트의 시작 0 뷰포트의 끝 1 인데 뷰포트의 0.8 지점에서 실행 하겠다..? 어떤 지점에서 감시 되었다고 판단 할 것인가 지정 ..?
+
+    })
+    .setClassToggle(spyEl,'show') // setClassToggle(토글할 요소 , 토글할 클래스명(0.8지점을 지나면 알아서 추가됨))
+    .addTo(new ScrollMagic.Controller()); // 우리가 만든 스크롤매직을 실제로 동작하게 하는 함수
+});
+
+// scene() : 옵션을 통해 특정 요소를 감시 한다.
+
 
