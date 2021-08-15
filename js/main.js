@@ -86,6 +86,21 @@ new Swiper('.promotion .swiper-container' , {
   }
 });
 
+new Swiper('.awards .swiper-container' , {
+  direction: 'horizontal', // 수평 슬라이드
+  autoplay : true , // 자동  재생
+  loop : true , // 반복 재생 
+  spaceBetween : 30,
+  slidesPerView : 5, // 하나의 화면에 몇개의 슬라이드를 보여 주나
+  navigation : { // 우리가 추가한 화살표에 기능을 넣는다.
+    prevEl : '.awards .swiper-prev' ,
+    nextEl : '.awards .swiper-next'
+  }
+
+});
+
+// ARWARDS SWIPER 
+
 // 토글 
 const promotionEl = document.querySelector('.promotion');
 const pormotionTollgeBtn = document.querySelector('.toggle-promotion');
