@@ -149,4 +149,6 @@ spyEls.forEach((spyEl) => {
 
 // scene() : 옵션을 통해 특정 요소를 감시 한다.
 
-
+// 올해 날짜 계산
+const thisYear = document.querySelector('.this-year');
+thisYear.textContent = new Date().getFullYear();
