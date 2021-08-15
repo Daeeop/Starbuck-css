@@ -19,6 +19,7 @@ searchInputEl.addEventListener('blur' , () => {
 
 // 스크롤이 일정 이상 내려가면 배지를 사라지게 함
 const badgeEl = document.querySelector('header .badges');
+const toTopEl = document.querySelector('#to-top');
 
 // window.addEventListener('scroll' , () => {
 //   // 스크롤 될때마다 함수가 실행 되기 때문에 비효율 적이다.
@@ -34,6 +35,10 @@ window.addEventListener('scroll' , _.throttle(() =>{
       opacity : 0,
       display : 'none'
     });
+    // 최상단 스크롤 버튼 보이기!
+    gsap.to(toTopEl , .2 , {
+      x: 0 // 버튼을 원래 위치로 놔둔다.
+    });
   } else {
     // 배지 보이기 >> 자연스럽게 하기 위해서 자바스크립트 애니메이션 라이브러리 이용
     // badgeEl.style.display = 'block';
@@ -41,14 +46,23 @@ window.addEventListener('scroll' , _.throttle(() =>{
       opacity : 1,
       display : 'block'
     });
+    // 스크롤 버튼 숨기기!
+    gsap.to(toTopEl , .2 , {
+      x: 100 // 버튼을 x축으로 100px 이동 시킨다.
+    });
   }
 }, 300)); 
 
 // _.throttle(함수 , 시간(s))
-
 // gsap.to(요소 , 지속시간 ,옵션 ); 
 // 옵션은 객체 데이터
 // 요소가 시각적으로만 사라진것이지 영역 자체가 사라지는게 아님 >> display : 'none' 도 명시 해주어야 한다.
+
+toTopEl.addEventListener('click' , () => {
+  gsap.to(window , .7 ,{
+    scrollTo: 0 // 화면의 위치를 0px 지점으로 옮긴다. 
+  }); // 애니메이션 처리 할 영역 , 처리 시간 , 옵션
+});
 
 // fade-in 순차적으로 요소 나타내기
 const fadeIns = document.querySelectorAll('.visual .fade-in');
@@ -152,3 +166,6 @@ spyEls.forEach((spyEl) => {
 // 올해 날짜 계산
 const thisYear = document.querySelector('.this-year');
 thisYear.textContent = new Date().getFullYear();
+
+
+
